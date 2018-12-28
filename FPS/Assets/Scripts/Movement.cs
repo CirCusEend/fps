@@ -10,9 +10,11 @@ public class Movement : MonoBehaviour {
     private float speed;
 
     private Vector3 movementDirection;
+    private Camera playerCamera;
 
     private void Awake()
     {
+        playerCamera = this.gameObject.GetComponentInChildren<Camera>();
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
@@ -47,6 +49,7 @@ public class Movement : MonoBehaviour {
 
     private void Update()
     {
+        playerCamera.transform.rotation = rb.rotation;
         GetInputs();
     }
 }
