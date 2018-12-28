@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour {
 
     private void MovePlayer()
     {
-        rb.AddForce((movementDirection * speed) * Time.deltaTime);
+        transform.Translate(movementDirection * speed * Time.deltaTime);
     }
 
     private void GetInputs()
